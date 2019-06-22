@@ -1,0 +1,9 @@
+{% load static %}
+
+<nav>
+    <a href="{% url 'shop:总览页' %}">所有商品</a>
+    {% for category in all_category %}
+        <a href="{% url 'shop:单类页' category.id %}">{{ category.name }}</a>
+    {% endfor %}
+    <a href="#" >购物车</a>
+</nav>

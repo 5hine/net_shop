@@ -1,0 +1,18 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block 关键词 %}{{ product.name }}{% endblock 关键词 %}
+{% block 描述 %}{{ product.describe }}{% endblock 描述 %}
+{% block 网页 %}{{ product.name }}-华为商城{% endblock 网页 %}
+
+{% block 主体 %}
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.describe }}</p>
+    <img src="{{ product.image.url }}" alt="">
+    {% if product.reserve > 0 %}
+        <p>{{ product.reserve }}</p>
+    {% else %}
+        <p>暂时缺货</p>
+    {% endif %}
+
+    <h4>{{ product.price|cut:".00" }}元</h4>
+{% endblock 主体 %}

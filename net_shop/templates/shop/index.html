@@ -1,0 +1,16 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block 主体 %}
+    {% for category, product_category in category_product %}
+    <h2>{{ category.name }}</h2>
+    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+        {% for product in product_category %}
+            <h3><a href="{% url 'shop:详情页' category.id product.id %}">{{ product.name }}</a></h3>
+            <p>{{ product.describe }}</p>
+            <br>
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <br>
+            {{ product.price|cut:".00" }}
+        {% endfor %}
+    {% endfor %}
+{% endblock 主体 %}

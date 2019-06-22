@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{% block 关键词 %}华为Mate20，华为P30，华为Honor20{% endblock 关键词 %}">
+    <meta name="description" content="{% block 描述 %}华为模仿页{% endblock 描述 %}">
+    <title>{% block 网页 %}华为商城{% endblock 网页 %}</title>
+</head>
+<body>
+    {% include "shop/header.html" %}
+
+    {% include "shop/nav.html" %}
+
+    <main>
+        {% block 主体 %}
+            这是网页的主体部分
+        {% endblock 主体 %}
+    </main>
+
+    {% include "shop/footer.html" %}
+
+</body>
+</html>
